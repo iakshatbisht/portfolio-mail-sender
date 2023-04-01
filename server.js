@@ -3,7 +3,9 @@ var http = require('http');
 const emailSender = require("./index")
 var server = http.createServer(function (req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Requested-With, Content-Type, locale, Accept");
+  res.setHeader("Access-Control-Allow-Credentials", true); // Required for cookies, authorization headers with HTTPS
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET OPTIONS");
     if (req.method === "GET") {
      console.log("HEhheee");
     } else if (req.method === "POST") {
