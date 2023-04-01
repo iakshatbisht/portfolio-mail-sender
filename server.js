@@ -19,7 +19,7 @@ var server = http.createServer(function (req, res) {
         console.log("finished");
         options = JSON.parse(body);
         emailSender(options);
-        res.writeHead(200, { "Content-Type": "text/html" });
+        res.writeHead(200, { "Content-Type": "application/json" });
 
         res.end(JSON.stringify({
           "statusCode": "200",
@@ -28,5 +28,5 @@ var server = http.createServer(function (req, res) {
         }));
       })
     }
-
+    console.log(process.env.PORT);
 }).listen(process.env.PORT || 2525);
